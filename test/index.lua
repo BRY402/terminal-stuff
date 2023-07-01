@@ -1,4 +1,5 @@
 -- index.lua
+local url = "https://raw.githubusercontent.com/BRY402/terminal-stuff/main/test/"
 display("yeah babyyyy")
 local function load(filelocation)
     local split = string.split(url, "/")
