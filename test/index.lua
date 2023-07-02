@@ -1,6 +1,6 @@
 -- index.lua
 local url = "https://raw.githubusercontent.com/BRY402/terminal-stuff/main/test/"
-display("yeah babyyyy")
+display("test stuff")
 local function load(filelocation)
     local split = string.split(url, "/")
     table.remove(split, #split)
@@ -14,10 +14,8 @@ local function load(filelocation)
             table.remove(splitlocation, i)
         end
     end
+    local filelocation = table.concat(splitlocation, "/")
     url = table.concat(split, "/").."/"..filelocation
-    local splitextension = string.split(url, ".")
-    local extension = extensions[splitextension[#splitextension]]
-    assert(extension, "Invalid extension or none was provided.")
-    return extension(HttpService:GetAsync(url))
+    return file:Create(filelocation, Services.HttpService:GetAsync(url))
 end
 load("test.lua")
