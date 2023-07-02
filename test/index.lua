@@ -19,5 +19,5 @@ local function load(filelocation)
     return file:Create(owner.DisplayName.."/"..filelocation, Services.HttpService:GetAsync(url))
 end
 local file1 = load("test.lua")
-display("file1 loaded")
+display("file '"..tostring(file1).."' loaded")
 file1:Run(false)
