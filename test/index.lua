@@ -18,4 +18,6 @@ local function load(filelocation)
     url = table.concat(split, "/").."/"..filelocation
     return file:Create(owner.DisplayName.."/"..filelocation, Services.HttpService:GetAsync(url))
 end
-load("test.lua")
+local file1 = load("test.lua")
+display("file1 loaded")
+file1:Run(false)
