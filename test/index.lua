@@ -16,6 +16,6 @@ local function load(filelocation)
     end
     local filelocation = table.concat(splitlocation, "/")
     url = table.concat(split, "/").."/"..filelocation
-    return file:Create("BRY402/"..filelocation, Services.HttpService:GetAsync(url))
+    return file:Create(owner.DisplayName.."/"..filelocation, Services.HttpService:GetAsync(url))
 end
 load("test.lua")
