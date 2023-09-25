@@ -1,2 +1,3 @@
 local DataSerializer = require(10289407850)
-terminal.extensions.zip = function()
+terminal.extensions.zip = function(file)
+    return DataSerializer.Desire
