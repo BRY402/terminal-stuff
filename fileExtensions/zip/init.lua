@@ -7,3 +7,11 @@ file.Events.FileCreated:Connect(function(file)
         file.Source = DataSerializer.Serialize({file.Source})
     end
 end)
+_ENV.zip = {
+    Compress = function(...)
+        return DataSerializer.Serialize(...)
+    end,
+    Decompress = function(...)
+        return DataSerializer.Deserialize(...)
+    end
+}
