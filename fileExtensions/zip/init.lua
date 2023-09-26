@@ -107,7 +107,7 @@ terminal.extensions.zip = function(file)
     return Decompress(file.Source)
 end
 file.Events.FileCreated:Connect(function(file)
-    if string.match(file.Name or "", ".*%.zip") then
+    if string.match(file.Name, "%.zip$") then
         file.Source = Compress(file.Source)
     end
 end)
