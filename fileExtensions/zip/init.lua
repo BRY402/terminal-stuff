@@ -106,12 +106,12 @@ end
 terminal.extensions.zip = function(file)
     return Decompress(file.Source)
 end
-file.Events.FileCreated:Connect(function(file)
-    if string.match(file.Name, "%.zip$") then
-        file.Source = Compress(file.Source)
-    end
-end)
-_ENV.zip = {
-    Compress = Compress,
+_ENV.zip = setmetatable({
+    Compress,
     Decompress = Decompress
-}
+}, {
+	__metatable = "This metatable is locked.",
+	__call = function(file)
+		string.match(file.Name, "%.zip$")
+	end
+})
