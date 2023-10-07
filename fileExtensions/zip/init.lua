@@ -111,7 +111,8 @@ _ENV.zip = setmetatable({
     Decompress = Decompress
 }, {
 	__metatable = "This metatable is locked.",
-	__call = function(file)
-		string.match(file.Name, "%.zip$")
+	__call = function(self, file)
+		local name = file:GetName(true)
+		file:Create(name..".zip", self.Compress(file.Source))
 	end
 })
