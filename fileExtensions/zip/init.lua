@@ -1,3 +1,4 @@
+-- Made by 1waffle1: https://devforum.roblox.com/t/text-compression/163637
 local dictionary, length = {}, 0
 for i = 32, 127 do
 	if i ~= 34 and i ~= 92 then
